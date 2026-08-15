@@ -48,4 +48,4 @@ intents = discord.Intents.default()
 
 client = MyClient(intents=intents) 
 
-client.run(discord_bot_token)
+client.run(os.getenv(discord_bot_token))
