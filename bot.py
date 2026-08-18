@@ -9,8 +9,8 @@ load_dotenv()
 
 class MyClient(discord.Client): 
     async def on_ready(self): 
-        channel = client.get_channel(os.getenv("channel_id"))
-        NSFWchannel = client.get_channel(os.getenv("NSFW_channel_id"))
+        channel = client.get_channel(int(os.getenv("channel_id")))
+        NSFWchannel = client.get_channel(int(os.getenv("NSFW_channel_id")))
         
         for entry in entries:
             embedVar = discord.Embed(title=entry.title, color=0xFF5700, type='rich', url=entry.link, timestamp = datetime.strptime(entry.published, "%Y-%m-%dT%H:%M:%S+00:00"))
